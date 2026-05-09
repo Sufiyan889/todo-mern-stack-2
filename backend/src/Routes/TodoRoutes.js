@@ -1,0 +1,16 @@
+import express from "express";
+import {
+    createtodo,
+    gettodos,
+    updateTodo,
+    deleteTodo
+} from '../Controllers/TodoController.js'
+
+const router = express.Router()
+
+router.post("/",createtodo)
+router.get("/",gettodos)
+router.put("/",updateTodo)
+router.delete("/",deleteTodo)
+
+export default router
