@@ -2,11 +2,11 @@ import Todo from "../Model/Todo.js";
 
 export const createtodo = async (req,res)=> {
 try {
-    const {text} = req.body
+    const {id} = req.body
     const newtodo = await Todo.create({
         text,
     })
-    res.status(201).json(newtodo)
+    res.status(200).json(newtodo)
 } catch (error) {
     res.json("error")
 }
@@ -41,6 +41,9 @@ export const deleteTodo = async (req,res)=>{
         const deleteTodos = await Todo.findByIdAndDelete(id)
         if (!deleteTodos) {
             res.json("Not Deleted")
+        }
+        else{
+            res.json("deleted")
         }
     } catch (error) {
         res.json("error")

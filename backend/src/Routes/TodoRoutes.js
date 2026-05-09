@@ -11,6 +11,6 @@ const router = express.Router()
 router.post("/",createtodo)
 router.get("/",gettodos)
 router.put("/",updateTodo)
-router.delete("/",deleteTodo)
+router.delete("/:id",deleteTodo)
 
 export default router
