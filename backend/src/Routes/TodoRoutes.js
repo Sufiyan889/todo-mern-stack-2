@@ -10,7 +10,7 @@ const router = express.Router()
 
 router.post("/",createtodo)
 router.get("/",gettodos)
-router.put("/",updateTodo)
+router.put("/:id",updateTodo)
 router.delete("/:id",deleteTodo)
 
 export default router
