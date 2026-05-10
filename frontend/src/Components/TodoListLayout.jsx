@@ -2,13 +2,12 @@ import axios from 'axios';
 import React, { useState } from 'react';
 
 const TodoListLayout = () => {
-const [inputvalue,setinputvalue]= useState("")
+const [inputvalue,setinputvalue]= useState()
 const [todos,settodos] = useState([])
 const post = async ()=>{
     console.log(inputvalue)
     await axios.post("https://todo-mern-stack-2-6xdj.onrender.com/api/todos/",{
-        text: inputvalue
-    }) 
+      text: inputvalue,})
     .then((res)=>{
         console.log(res)
     }).catch((err)=>{

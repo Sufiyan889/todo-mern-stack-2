@@ -2,11 +2,11 @@ import Todo from "../Model/Todo.js";
 
 export const createtodo = async (req,res)=> {
 try {
-    const {id} = req.body
+    const {text} = req.body
     const newtodo = await Todo.create({
         text,
     })
-    res.status(200).json(newtodo)
+    res.status(201).json(newtodo)
 } catch (error) {
     res.json("error")
 }
